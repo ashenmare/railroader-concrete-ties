@@ -1,0 +1,21 @@
+{
+  "objects": [
+    {
+      "identifier": "ashenmare/concrete-tie",
+      "metadata": {
+        "name": "Concrete Ties",
+        "description": "Concrete Ties"
+      },
+      "definition": {
+        "kind": "Load",
+        "description": "Concrete Ties",
+        "units": "Pounds",
+        "density": 144.0,
+        "unitWeightInPounds": 0.0,
+        "importable": true,
+        "costPerUnit": 0.0014,
+        "carTypeFilter": "GB,FM"
+      }
+    }
+  ]
+}

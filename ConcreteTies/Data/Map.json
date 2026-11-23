@@ -1,0 +1,254 @@
+{
+  "graph": {
+    "nodes": {
+      "ctw1": {
+        "position": [
+          23496.641,
+          614.2,
+          -966.237
+        ],
+        "rotation": [
+          0.0,
+          257.3945,
+          0.0
+        ]
+      },
+      "ctw2": {
+        "position": [
+          23432.28,
+          614.2,
+          -944.637
+        ],
+        "rotation": [
+          0.0,
+          259.1118,
+          0.0
+        ]
+      },
+      "ctna": {
+        "position": [
+          23691.417,
+          614.2,
+          -896.912
+        ],
+        "rotation": [
+          0.0,
+          285.7245,
+          0.0
+        ]
+      },
+      "ctnb": {
+        "position": [
+          23662.103,
+          614.2,
+          -895.338
+        ],
+        "rotation": [
+          0.0,
+          259.1118,
+          0.0
+        ]
+      },
+      "ctnc": {
+        "position": [
+          23431.336,
+          614.2,
+          -939.728
+        ],
+        "rotation": [
+          0.0,
+          259.1118,
+          0.0
+        ]
+      }
+    },
+    "segments": {
+      "ctw1s": {
+        "a": "N9kl",
+        "b": "ctw1",
+        "groupId": "sy-db",
+        "speedLimit": 15
+      },
+      "ctw2s": {
+        "a": "N4oh",
+        "b": "ctw2",
+        "groupId": "sy-db",
+        "speedLimit": 15
+      },
+      "ctn1": {
+        "a": "Ni0t",
+        "b": "ctna",
+        "groupId": "sy-db",
+        "speedLimit": 15,
+        "priority": -1
+      },
+      "ctn2": {
+        "a": "ctna",
+        "b": "ctnb",
+        "groupId": "sy-db",
+        "speedLimit": 15
+      },
+      "ctn3": {
+        "a": "ctnb",
+        "b": "ctnc",
+        "groupId": "sy-db",
+        "speedLimit": 15
+      }
+    }
+  },
+  "ops": {
+    "areas": {
+      "sylva": {
+        "industries": {
+          "sylva-concrete-ties": {
+            "name": "Scott Concrete Ties",
+            "position": [
+              23545.0,
+              614.0,
+              -935.0
+            ],
+            "usesContract": true,
+            "trackSpans": {
+              "in": [
+                "ctw1s|a|1.5",
+                "ctw1s|b|1.5"
+              ],
+              "out": [
+                "ctw2s|a|1.5",
+                "ctw2s|b|1.5"
+              ]
+            },
+            "components": {
+              "steel": {
+                "kind": "IndustryUnloader",
+                "loadId": "rr/boxcar-metal-stock",
+                "carUnloadRate": 4000000.0,
+                "storageConsumptionRate": 0.0,
+                "maxStorage": 146000.0,
+                "orderAwayEmpties": true,
+                "orderLoads": true,
+                "name": "Scott Concrete Ties S1",
+                "trackSpans": [
+                  "in",
+                  "out"
+                ],
+                "carTypeFilter": "XM*"
+              },
+              "cement": {
+                "kind": "IndustryUnloader",
+                "loadId": "rr/concrete",
+                "carUnloadRate": 4000000.0,
+                "storageConsumptionRate": 0.0,
+                "maxStorage": 297000.0,
+                "orderAwayEmpties": true,
+                "orderLoads": true,
+                "name": "Scott Concrete Ties C1",
+                "trackSpans": [
+                  "in",
+                  "out"
+                ]
+              },
+              "aggregate": {
+                "kind": "IndustryUnloader",
+                "loadId": "rr/ballast",
+                "carUnloadRate": 4000000.0,
+                "storageConsumptionRate": 0.0,
+                "maxStorage": 987000.0,
+                "orderAwayEmpties": true,
+                "orderLoads": true,
+                "name": "Scott Concrete Ties A1",
+                "trackSpans": [
+                  "in",
+                  "out"
+                ]
+              },
+              "formula": {
+                "kind": "FormulaicIndustryComponent",
+                "name": "Formula",
+                "trackSpans": [],
+                "inputTerms": [
+                  {
+                    "loadId": "rr/boxcar-metal-stock",
+                    "unitsPerDay": 35714.0
+                  },
+                  {
+                    "loadId": "rr/concrete",
+                    "unitsPerDay": 142857.0
+                  },
+                  {
+                    "loadId": "rr/ballast",
+                    "unitsPerDay": 821429.0
+                  }
+                ],
+                "outputTerms": [
+                  {
+                    "loadId": "ashenmare/concrete-tie",
+                    "unitsPerDay": 1000000.0
+                  }
+                ]
+              },
+              "ties": {
+                "kind": "IndustryLoader",
+                "loadId": "ashenmare/concrete-tie",
+                "carLoadRate": 1500000.0,
+                "orderAwayLoaded": true,
+                "productionRate": 0.0,
+                "maxStorage": 1500000.0,
+                "orderEmpties": true,
+                "name": "Scott Concrete Ties TO1",
+                "trackSpans": [
+                  "in",
+                  "out"
+                ]
+              },
+              "ties-seller": {
+                "kind": "IndustrySeller",
+                "loadId": "ashenmare/concrete-tie",
+                "carLoadRate": 15000000.0,
+                "ledgerCategory": "MaintenanceOfWay",
+                "name": "Scott Concrete Ties TO1",
+                "trackSpans": [
+                  "in",
+                  "out"
+                ]
+              }
+            }
+          },
+          "sylva-interchange": {
+            "components": {
+              "concrete-ties": {
+                "kind": "InterchangedIndustryLoader",
+                "loadId": "ashenmare/concrete-tie",
+                "ledgerCategory": "MaintenanceOfWay",
+                "name": "Atlantic Locomotive Works",
+                "trackSpans": [
+                  "Pfaj",
+                  "Pin7",
+                  "P7ec"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "whittier": {
+        "industries": {
+          "ewh-interchange": {
+            "components": {
+              "concrete-ties": {
+                "kind": "InterchangedIndustryLoader",
+                "loadId": "ashenmare/concrete-tie",
+                "ledgerCategory": "MaintenanceOfWay",
+                "name": "Atlantic Locomotive Works",
+                "trackSpans": [
+                  "Pyih",
+                  "Pcll"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

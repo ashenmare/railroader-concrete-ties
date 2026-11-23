@@ -1,0 +1,13 @@
+{
+  "identifier": "ashenmare/concrete-ties",
+  "version": "0.1.0",
+  "name": "Concrete Ties",
+  "author": "ashenmare",
+  "scope": "unscoped",
+  "dependencies": {
+    "required": [
+      "rr/game >=0.6.3"
+    ]
+  },
+  "description": "A concrete tie plant beside the Scott tie plant at Sylva, with the track it needs. Data only."
+}
